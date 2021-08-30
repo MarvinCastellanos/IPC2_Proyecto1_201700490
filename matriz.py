@@ -8,7 +8,7 @@ class matrizD:
     def generaGraphviz(self):
         aux1=self.head
         aux2=self.head
-        dot=Digraph(comment='Tablero')
+        dot=Digraph(comment='Terreno')
         dot.attr(style='filled')
         dot.node(str(aux1.getX())+','+str(aux1.getY()),'Head')
         while(True):
@@ -18,7 +18,7 @@ class matrizD:
                 posSig = str(aux2.getArriba().getX())+','+str(aux2.getArriba().getY())
 
                 dot.node(posSig,str(aux2.getArriba().getValor()))
-                dot.edge(pos,posSig)
+                #dot.edge(pos,posSig)
                 #dot.edge(posSig,pos)
          #grafica nodos hacia abajo
             if(aux2.getAbajo() is not None):
@@ -92,7 +92,7 @@ class matrizD:
                     nuevo.setAnterior(auxX)
                     contadorX+=1
                     auxX=auxX.getSiguiente()
-                    print('cabeceraX '+str(contadorX)+' Agregada')
+                    #print('cabeceraX '+str(contadorX)+' Agregada')
                 else:
                     auxX=auxX.getSiguiente()
                     contadorX+=1
@@ -113,7 +113,7 @@ class matrizD:
                     nodo.setArriba(auxX)
                     auxX.getAbajo().setArriba(nodo)
                     auxX.setAbajo(nodo)
-                    print('se agrego nodo en x')
+                    #print('se agrego nodo en x')
                     break
             else:
                 auxX=nodo
