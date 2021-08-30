@@ -8,7 +8,7 @@ class matrizD:
     def generaGraphviz(self):
         aux1=self.head
         aux2=self.head
-        dot=Digraph(comment='Terreno')
+        dot=Digraph()
         dot.attr(style='filled')
         dot.node(str(aux1.getX())+','+str(aux1.getY()),'Head')
         while(True):
@@ -73,7 +73,7 @@ class matrizD:
                                 break
                     break
             
-            
+        
         dot.render('Matriz', view=True)
 
     def agregaNodo(self,nodo):
